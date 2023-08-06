@@ -1,9 +1,7 @@
 <script>
-  import TestResults from "./TestResults.svelte";
+  import TestResults from "./lib/TestResults.svelte"
 </script>
 
 <main>
-
-  <TestResults ...data/>
-
+  <TestResults />
 </main>

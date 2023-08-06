@@ -1,4 +1,4 @@
-function testResultsData(data) {
+function parseTestResults(data) {
     const [testResultsRaw] = data;
 
     return  {
@@ -8,5 +8,5 @@ function testResultsData(data) {
 };
 
 export default {
-    testResultsData,
+    parseTestResults,
 }
