@@ -5,6 +5,12 @@ class Vehicle(models.Model):
 
     def __str__(self) -> str:
         return self.vehicle_id
+    
+class Cell(models.Model):
+    cell_name = models.CharField(max_length=10)
+
+    def __str__(self) -> str:
+        return self.cell_name
 
 class Engineer(models.Model):
     first_name = models.CharField(max_length=100)
@@ -27,9 +33,10 @@ class Drivetrace(models.Model):
         return self.drivetrace_name
     
 class TestResults(models.Model):
+    
     test_name = models.CharField(max_length=255)
     test_datetime = models.DateTimeField()
-    cell = models.CharField(max_length=5)
+    cell = models.ForeignKey(Cell, on_delete=models.SET_NULL, null=True)
     vehicle_id = models.ForeignKey(Vehicle, on_delete=models.SET_NULL, null=True)
     drivetrace =models.ForeignKey(Drivetrace, on_delete=models.SET_NULL, null=True)
     engineer = models.ForeignKey(Engineer, on_delete=models.SET_NULL, null=True)

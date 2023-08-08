@@ -15,6 +15,9 @@ from cdt_app.models import *
 # engineer_list = [['Keira', 'Francis'], ['Aldo', 'Benson'], ['Marques', 'Simmons'], ['Nikolai', 'Pollard'], ['Alex', 'Doyle'], ['Sullivan', 'Bullock'], ['Ainsley', 'Ortiz']]
 # drivetrace_list = ['EU02', 'US02', 'US01', 'EU01', 'WW03', 'WW01', 'WW02']
 # vehicle_list = ['Vehicle G', 'Vehicle C', 'Vehicle D', 'Vehicle E', 'Vehicle B', 'Vehicle A', 'Vehicle F']
+
+
+
 test_result_list = [
     ['C7 2023-07-12 08', '12/07/2023 08:48', 'C7', 'Vehicle G', 'EU02', 'Keira', 'Francis', 'Brian', 'Hanna', '1.645858349', '0.349605949', '0.401080035', '247.1896264'], 
     ['C6 2023-07-12 02', '12/07/2023 07:55', 'C6', 'Vehicle C', 'US02', 'Aldo', 'Benson', 'Damien', 'Sparks', '3.819567125', '0.983993546', '0.106986212', '178.9464215'], 
@@ -125,7 +128,7 @@ for sublist in test_result_list:
     TestResults.objects.create(
         test_name = sublist[0],
         test_datetime = dt.datetime.strftime(new_date_format, '%Y-%m-%d %H:%M'),
-        cell = sublist[2],
+        cell = Cell.objects.get(cell_name =sublist[2]),
         vehicle_id = Vehicle.objects.get(vehicle_id = sublist[3]),
         drivetrace = Drivetrace.objects.get(drivetrace_name = sublist[4]),
         engineer = Engineer.objects.get(first_name = sublist[5], last_name = sublist[6]),

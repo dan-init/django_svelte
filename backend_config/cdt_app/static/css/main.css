@@ -1,19 +1,23 @@
-.table-div {
-    display: flex;
-    justify-content: center;
+
+
+
+#float-child {
+
+    float: left;
+    padding: 25px;
+
 }
 
-/* img {
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-} */
+.flex-container{
+    justify-content:center;
 
+}
 
-thead tr span.icon-arrow {
-    display: inline-block;
-    width: 1.3rem;
-    height: 1.3rem;
+.click-filter {
+    float: left;
+    padding-left: 25px;
+    padding-left: 25px;
+    justify-content: center;
 }
 
 .content-table {
@@ -26,7 +30,7 @@ thead tr span.icon-arrow {
     overflow: hidden;
     overflow-y: scroll;
     height: 600px;
-    width: 1300px;
+    width: 1400px;
     display:block;
     box-shadow: 0 0 20px rgba(0,0,0,0.15);
 
