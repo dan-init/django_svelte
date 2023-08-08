@@ -1,16 +1,15 @@
 <script>
 
 import { onMount } from 'svelte';
-const endpoint = 'http://localhost:8000/testresults/';
-export let results = []
+const endpoint = 'http://localhost:8000/cdtapi/testresults/';
 
-const load = async function () {
-	const jsonResponse = await fetch(endpoint);
-	const data = await jsonResponse.json();	
-	results = data
-}
+$: reactiveVar = []
 
-onMount(load);
+onMount(async () => {
+	let jsonResponse = await fetch(endpoint);
+	let data = await jsonResponse.json()
+	reactiveVar = data
+})
 
 
 </script>
@@ -20,7 +19,7 @@ onMount(load);
 </div>
 
 <div class="input-group">
-	<input type="text" name="search" id="search" placeholder="Search"/>
+	<input onkeyup='SearchForRow()' type="text" name="search" id="search" placeholder="Search"/>
 </div>
 
 <div class="table-div">
@@ -40,8 +39,8 @@ onMount(load);
 				<th>Total c02<span class="icon-arrow">&uparrow;</span></th>
 			</tr>
 		</thead>
-		<tbody>
-			{#each results as result }
+		<tbody id='table-body'>
+			{#each reactiveVar as result }
 			<tr>
 				<td> {result.id}</td>
 				<td> {result.test_name}</td>

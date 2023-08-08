@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+
+    <div class="table-div">
+        <table class="content-table" id="myTable">
+            <thead>
+                <tr>
+                    <th>ID<span class="icon-arrow">&uparrow;</span></th>
+                    <th>Test Name<span class="icon-arrow">&uparrow;</span></th>
+                    <th>Test DateTime<span class="icon-arrow">&uparrow;</span></th>
+                    <th>Engineer<span class="icon-arrow">&uparrow;</span></th>
+                    <th>Driver<span class="icon-arrow">&uparrow;</span></th>
+                    <th>Cell<span class="icon-arrow">&uparrow;</span></th>
+                    <th>Vehicle<span class="icon-arrow">&uparrow;</span></th>
+                    <th>IWR<span class="icon-arrow">&uparrow;</span></th>
+                    <th>RMMSE<span class="icon-arrow">&uparrow;</span></th>
+                    <th>Total c0<span class="icon-arrow">&uparrow;</span></th>
+                    <th>Total c02<span class="icon-arrow">&uparrow;</span></th>
+                </tr>
+            </thead>
+            <tbody id='table-body'>
+                {% for result in test_result %}
+                <tr>
+                    <td> {{result.id}}</td>
+                    <td> {{result.test_name}}</td>
+                    <td> {{result.test_datetime}}</td>
+                    <td> {{result.engineer}}</td>
+                    <td> {{result.driver}}</td>
+                    <td> {{result.cell}}</td>
+                    <td> {{result.vehicle_id}}</td>
+                    <td> {{result.iwr}}</td>
+                    <td> {{result.rmsse}}</td>
+                    <td> {{result.total_co}}</td>
+                    <td> {{result.total_co2}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+                
+            </table>
+    </div>
+
+{% endblock %}

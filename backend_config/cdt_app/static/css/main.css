@@ -1,0 +1,72 @@
+.table-div {
+    display: flex;
+    justify-content: center;
+}
+
+/* img {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+} */
+
+
+thead tr span.icon-arrow {
+    display: inline-block;
+    width: 1.3rem;
+    height: 1.3rem;
+}
+
+.content-table {
+    align-self: center;
+    border-collapse: collapse;
+    border-radius: 5px 5px 0 0;
+    margin: 25px 0 ;
+    font-size: 0.9em;
+    text-align: center;
+    overflow: hidden;
+    overflow-y: scroll;
+    height: 600px;
+    width: 1300px;
+    display:block;
+    box-shadow: 0 0 20px rgba(0,0,0,0.15);
+
+}
+
+.content-table th {
+    cursor: pointer;
+    background-color: black;
+    position: sticky;
+    top: 0; /* Don't forget this, required for the stickiness */
+}
+
+.content-table thead tr {
+    background-color: black;
+    color: #ffffff;
+    text-align: center;
+    font-weight: bold;
+}
+
+.content-table th,
+.content-table td {
+    padding: 12px 15px;
+}
+
+.content-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.content-table tbody tr:nth-last-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.content-table tbody tr:nth-last-of-type(odd) {
+    background-color: #a1a1a1;
+}
+
+.content-table tbody tr:last-of-type {
+    border-bottom: 2px solid black;
+}
+
+thead th.active {
+    color: red;
+}

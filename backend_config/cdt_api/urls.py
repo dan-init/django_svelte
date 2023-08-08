@@ -23,7 +23,8 @@ router.register(r'Test Results', cdt_api.views.TestResultViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include(router.urls)),
-    path('testresults/', cdt_api.views.test_result_list),
-    path('testresults/<int:id>', cdt_api.views.test_result_detail),
+    path('cdtapi/', include(router.urls)),
+    path('cdtapi/testresults/', cdt_api.views.test_result_list),
+    path('cdtapi/testresults/<int:id>', cdt_api.views.test_result_detail),
+    path('cdtapp/', include('cdt_app.urls'))
 ]
