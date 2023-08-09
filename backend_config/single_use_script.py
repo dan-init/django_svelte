@@ -124,20 +124,21 @@ test_result_list = [
 for sublist in test_result_list:
 
     new_date_format = dt.datetime.strptime(sublist[1], "%d/%m/%Y %H:%M")
+    print(new_date_format)
 
-    TestResults.objects.create(
-        test_name = sublist[0],
-        test_datetime = dt.datetime.strftime(new_date_format, '%Y-%m-%d %H:%M'),
-        cell = Cell.objects.get(cell_name =sublist[2]),
-        vehicle_id = Vehicle.objects.get(vehicle_id = sublist[3]),
-        drivetrace = Drivetrace.objects.get(drivetrace_name = sublist[4]),
-        engineer = Engineer.objects.get(first_name = sublist[5], last_name = sublist[6]),
-        driver = Driver.objects.get(first_name = sublist[7], last_name = sublist[8]),
-        iwr = ast.literal_eval(sublist[9]),
-        rmsse = ast.literal_eval(sublist[10]),
-        total_co = ast.literal_eval(sublist[11]),
-        total_co2 = ast.literal_eval(sublist[12]),
-    )
+    # TestResults.objects.create(
+    #     test_name = sublist[0],
+    #     test_datetime = dt.datetime.strftime(new_date_format, '%Y-%m-%d %H:%M'),
+    #     cell = Cell.objects.get(cell_name =sublist[2]),
+    #     vehicle_id = Vehicle.objects.get(vehicle_id = sublist[3]),
+    #     drivetrace = Drivetrace.objects.get(drivetrace_name = sublist[4]),
+    #     engineer = Engineer.objects.get(first_name = sublist[5], last_name = sublist[6]),
+    #     driver = Driver.objects.get(first_name = sublist[7], last_name = sublist[8]),
+    #     iwr = ast.literal_eval(sublist[9]),
+    #     rmsse = ast.literal_eval(sublist[10]),
+    #     total_co = ast.literal_eval(sublist[11]),
+    #     total_co2 = ast.literal_eval(sublist[12]),
+    # )
                             
 # for i in range(500, 500):
 #     instance = TestResults.objects.get(pk = 500)

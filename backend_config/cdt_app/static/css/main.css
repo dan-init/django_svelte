@@ -4,7 +4,7 @@
 #float-child {
 
     float: left;
-    padding: 25px;
+    padding: 1em;
 
 }
 
@@ -15,22 +15,21 @@
 
 .click-filter {
     float: left;
-    padding-left: 25px;
-    padding-left: 25px;
-    justify-content: center;
+    padding-left: 1em;
+    padding-left: 1em;
 }
 
 .content-table {
     align-self: center;
     border-collapse: collapse;
     border-radius: 5px 5px 0 0;
-    margin: 25px 0 ;
+    margin: 1.5625em 0 ;
     font-size: 0.9em;
     text-align: center;
     overflow: hidden;
     overflow-y: scroll;
     height: 600px;
-    width: 1400px;
+    width: 80em;
     display:block;
     box-shadow: 0 0 20px rgba(0,0,0,0.15);
 
@@ -52,7 +51,7 @@
 
 .content-table th,
 .content-table td {
-    padding: 12px 15px;
+    padding: 12px 0px;
 }
 
 .content-table tbody tr {
